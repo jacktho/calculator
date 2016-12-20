@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, ViewChild, ElementRef, Renderer } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,9 +7,18 @@ import { Component, HostListener } from '@angular/core';
 })
 export class AppComponent {
   title = 'Calculator!';
+  @ViewChild('test') theButton: ElementRef;
+  @HostListener('window:keyup', ['$event.key'])
+  theThing(key: string) {
+    if (key !== '8') { return; };
 
-  @HostListener('window:keyup', ['$event'])
-  test(event: any) {
-    console.log(event.key);
+    let event = new MouseEvent('click', { bubbles: true });
+    this.renderer.invokeElementMethod(this.theButton.nativeElement, 'dispatchEvent', [event]);
+  }
+
+  constructor(private renderer: Renderer) { }
+
+  yowzers() {
+    console.log('hula hoop')
   }
 }
