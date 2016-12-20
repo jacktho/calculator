@@ -1,0 +1,22 @@
+.main-calculator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-flow: row wrap;
+  align-content: flex-end;
+  width: 250px;
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  flex-basis: 21%;
+  padding: 2%;
+  margin: 2%;
+}
+
+.stretch {
+  flex-grow: 1;
+}
