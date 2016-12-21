@@ -4,27 +4,27 @@
 </h1>
 
 <div class="main-calculator">
-  <button>%</button>
-  <button>&#8730;</button>
-  <button>x&#178;</button>
-  <button>&#247;</button>
-  <button>CE</button>
-  <button>AC</button>
-  <button>&#9003;</button>
-  <button>&#215;</button>
-  <button (click)="test('7')">7</button>
-  <button #test (click)="yowzers()">8</button>
-  <button>9</button>
-  <button>-</button>
-  <button>4</button>
-  <button>5</button>
-  <button>6</button>
-  <button>+</button>
-  <button>1</button>
-  <button>2</button>
-  <button>3</button>
-  <button>&#8314;&#8725;&#8331;</button>
-  <button>0</button>
-  <button>.</button>
-  <button class="stretch">Enter</button>
+  <app-operator-input [operatorType]="'percentage'"></app-operator-input>
+  <app-operator-input [operatorType]="'squareRoot'"></app-operator-input>
+  <app-operator-input [operatorType]="'squared'"></app-operator-input>
+  <app-operator-input [operatorType]="'division'"></app-operator-input>
+  <app-clear-entry-input></app-clear-entry-input>
+  <app-all-clear-input></app-all-clear-input>
+  <app-backspace-input></app-backspace-input>
+  <app-operator-input [operatorType]="'multiplication'"></app-operator-input>
+  <app-number-input [numberValue]="7"></app-number-input>
+  <app-number-input [numberValue]="8"></app-number-input>
+  <app-number-input [numberValue]="9"></app-number-input>
+  <app-operator-input [operatorType]="'subtraction'"></app-operator-input>
+  <app-number-input [numberValue]="4"></app-number-input>
+  <app-number-input [numberValue]="5"></app-number-input>
+  <app-number-input [numberValue]="6"></app-number-input>
+  <app-operator-input [operatorType]="'addition'"></app-operator-input>
+  <app-number-input [numberValue]="1"></app-number-input>
+  <app-number-input [numberValue]="2"></app-number-input>
+  <app-number-input [numberValue]="3"></app-number-input>
+  <app-positive-or-negative></app-positive-or-negative>
+  <app-number-input [numberValue]="0"></app-number-input>
+  <app-number-input [numberValue]="'.'"></app-number-input>
+  <app-enter-input class="stretch"></app-enter-input>
 </div>
