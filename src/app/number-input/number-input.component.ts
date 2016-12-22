@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { StorageService } from '../storage.service';
 
 @Component({
   selector: 'app-number-input',
@@ -7,9 +8,12 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class NumberInputComponent implements OnInit {
   @Input() numberValue: any;
-  constructor() { }
+  constructor(private storageService: StorageService) { }
 
   ngOnInit() {
   }
 
+  input() {
+    this.storageService.addNumber(this.numberValue);
+  }
 }

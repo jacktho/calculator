@@ -3,21 +3,21 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { PositiveOrNegativeComponent } from './positive-or-negative.component';
+import { PositiveOrNegativeInputComponent } from './positive-or-negative-input.component';
 
-describe('PositiveOrNegativeComponent', () => {
-  let component: PositiveOrNegativeComponent;
-  let fixture: ComponentFixture<PositiveOrNegativeComponent>;
+describe('PositiveOrNegativeInputComponent', () => {
+  let component: PositiveOrNegativeInputComponent;
+  let fixture: ComponentFixture<PositiveOrNegativeInputComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PositiveOrNegativeComponent ]
+      declarations: [ PositiveOrNegativeInputComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PositiveOrNegativeComponent);
+    fixture = TestBed.createComponent(PositiveOrNegativeInputComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

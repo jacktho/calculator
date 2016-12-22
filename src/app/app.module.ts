@@ -10,7 +10,9 @@ import { ClearEntryInputComponent } from './clear-entry-input/clear-entry-input.
 import { AllClearInputComponent } from './all-clear-input/all-clear-input.component';
 import { BackspaceInputComponent } from './backspace-input/backspace-input.component';
 import { EnterInputComponent } from './enter-input/enter-input.component';
-import { PositiveOrNegativeComponent } from './positive-or-negative/positive-or-negative.component';
+import { PositiveOrNegativeInputComponent } from
+  './positive-or-negative-input/positive-or-negative-input.component';
+import { StorageService } from './storage.service';
 
 @NgModule({
   declarations: [
@@ -21,14 +23,14 @@ import { PositiveOrNegativeComponent } from './positive-or-negative/positive-or-
     AllClearInputComponent,
     BackspaceInputComponent,
     EnterInputComponent,
-    PositiveOrNegativeComponent
+    PositiveOrNegativeInputComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [StorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

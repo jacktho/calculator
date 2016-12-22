@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { StorageService } from '../storage.service';
 
 @Component({
   selector: 'app-operator-input',
@@ -9,10 +10,14 @@ export class OperatorInputComponent implements OnInit {
   @Input() operatorType: string;
   characterCode: string;
 
-  constructor() { }
+  constructor(private storageService: StorageService) { }
 
   ngOnInit() {
     this.assignCharacterCode();
+  }
+
+  input() {
+    this.storageService.addOperator(this.operatorType);
   }
 
   assignCharacterCode() {
