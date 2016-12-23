@@ -13,6 +13,8 @@ import { EnterInputComponent } from './enter-input/enter-input.component';
 import { PositiveOrNegativeInputComponent } from
   './positive-or-negative-input/positive-or-negative-input.component';
 import { StorageService } from './storage.service';
+import { SolutionScreenComponent } from './solution-screen/solution-screen.component';
+import { FormulaScreenComponent } from './formula-screen/formula-screen.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { StorageService } from './storage.service';
     AllClearInputComponent,
     BackspaceInputComponent,
     EnterInputComponent,
-    PositiveOrNegativeInputComponent
+    PositiveOrNegativeInputComponent,
+    SolutionScreenComponent,
+    FormulaScreenComponent
   ],
   imports: [
     BrowserModule,

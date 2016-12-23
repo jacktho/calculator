@@ -1,6 +1,10 @@
 .main-calculator {
   margin-left: auto;
   margin-right: auto;
+  width: 250px;
+}
+
+.button-wrap {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -8,10 +12,9 @@
   flex-wrap: wrap;
   flex-flow: row wrap;
   align-content: flex-end;
-  width: 250px;
 }
 
-.main-calculator > * {
+.button-wrap > * {
   flex-basis: 21%;
   display: flex;
   align-items: stretch;
