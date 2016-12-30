@@ -26,7 +26,6 @@ export class EnterInputComponent implements OnInit {
         return { value: result, operator: current.operator };
       }
     );
-
     return finalResult.value;
   }
 

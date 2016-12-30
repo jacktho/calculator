@@ -22,15 +22,6 @@ export class OperatorInputComponent implements OnInit {
 
   assignCharacterCode() {
     switch (this.operatorType) {
-      case 'percentage':
-        this.characterCode = String.fromCodePoint(0x0025);
-        break;
-      case 'squareRoot':
-        this.characterCode = String.fromCodePoint(0x221A);
-        break;
-      case 'squared':
-        this.characterCode = 'x' + String.fromCodePoint(0x00B2);
-        break;
       case 'division':
         this.characterCode = String.fromCodePoint(0x00F7);
         break;
