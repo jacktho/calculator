@@ -12,12 +12,14 @@ import { BackspaceInputComponent } from './backspace-input/backspace-input.compo
 import { EnterInputComponent } from './enter-input/enter-input.component';
 import { PositiveOrNegativeInputComponent } from
   './positive-or-negative-input/positive-or-negative-input.component';
-import { StorageService } from './storage.service';
 import { SolutionScreenComponent } from './solution-screen/solution-screen.component';
 import { FormulaScreenComponent } from './formula-screen/formula-screen.component';
 import { SquareRootInputComponent } from './square-root-input/square-root-input.component';
 import { SquaredInputComponent } from './squared-input/squared-input.component';
 import { PercentInputComponent } from './percent-input/percent-input.component';
+
+import { StorageService } from './storage.service';
+import { CalculateService } from './calculate.service';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,7 @@ import { PercentInputComponent } from './percent-input/percent-input.component';
     FormsModule,
     HttpModule
   ],
-  providers: [StorageService],
+  providers: [StorageService, CalculateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

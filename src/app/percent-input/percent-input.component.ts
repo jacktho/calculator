@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { StorageService } from '../storage.service';
+import { CalculateService } from '../calculate.service';
 
 @Component({
   selector: 'app-percent-input',
@@ -8,10 +9,14 @@ import { StorageService } from '../storage.service';
 })
 export class PercentInputComponent implements OnInit {
 
-  constructor(private storageService: StorageService) { }
+  constructor(private storageService: StorageService, private calculateService: CalculateService) { }
 
   get endOfInputsValue() {
     return this.storageService.endOfInputs.value;
+  }
+
+  get currentTotal() {
+    return this.calculateService.calculate(true);
   }
 
   ngOnInit() {
@@ -30,23 +35,12 @@ export class PercentInputComponent implements OnInit {
   }
 
   addPercentAsNewValueToInputs() {
-    const percent = (this.endOfInputsValue / 100) * this.endOfInputsValue;
+    const percent = (this.currentTotal / 100) * this.currentTotal;
     this.storageService.addNumber(percent);
   }
 
   changeValueToPercentageOfPreviousValue() {
-    let previousNumber = this.storageService.inputs[this.storageService.inputs.length - 2].value;
-    if (previousNumber === 0) {
-      for (let i = this.storageService.inputs.length - 2; i >= 0; i--) {
-        if (this.storageService.inputs[i].value !== 0) {
-          previousNumber = this.storageService.inputs[i].value;
-          break;
-        } else {
-          previousNumber = 0;
-        }
-      }
-    }
-    const percent = (this.endOfInputsValue / 100) * previousNumber;
+    const percent = (this.endOfInputsValue / 100) * this.currentTotal;
     this.storageService.endOfInputs.value = percent;
   }
 }
