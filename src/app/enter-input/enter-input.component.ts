@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { StorageService } from '../storage.service';
-import { Input } from '../input';
+import { CalculateService } from '../calculate.service';
 
 @Component({
   selector: 'app-enter-input',
@@ -9,38 +9,14 @@ import { Input } from '../input';
 })
 export class EnterInputComponent implements OnInit {
 
-  constructor(private storageService: StorageService) { }
+  constructor(private storageService: StorageService,
+    private calculateService: CalculateService) { }
 
   ngOnInit() {
   }
 
   input() {
-    this.storageService.solution = this.calculate();
+    this.storageService.solution = this.calculateService.calculate();
     this.storageService.addOperator('Enter');
-  }
-
-  calculate() {
-    const finalResult: Input = this.storageService.inputs.reduce(
-      (previous: Input, current: Input) => {
-        const result: number = this.arithmetic(previous.operator, previous.value, current.value);
-        return { value: result, operator: current.operator };
-      }
-    );
-    return finalResult.value;
-  }
-
-  arithmetic(operator, firstValue, secondValue) {
-    switch (operator) {
-      case 'addition':
-        return firstValue + secondValue;
-      case 'subtraction':
-        return firstValue - secondValue;
-      case 'multiplication':
-        return firstValue * secondValue;
-      case 'division':
-        return firstValue / secondValue;
-      default:
-        break;
-    }
   }
 }
