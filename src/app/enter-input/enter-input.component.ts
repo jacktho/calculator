@@ -16,6 +16,7 @@ export class EnterInputComponent implements OnInit {
   }
 
   input() {
+    if (!this.storageService.inputs.length) { return; }
     this.storageService.solution = this.calculateService.calculate();
     this.storageService.addOperator('Enter');
   }
