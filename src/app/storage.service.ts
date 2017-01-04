@@ -6,6 +6,9 @@ export class StorageService {
   inputs: Input[] = [];
   solution: number = 0;
 
+  public decimal: string;
+  public originalNumber: number;
+
   constructor() { }
 
   get endOfInputs() {
@@ -13,7 +16,9 @@ export class StorageService {
   }
 
   addNumber(value: number) {
-    if (this.endOfInputs && !this.endOfInputs.operator) {
+    if (this.decimal !== undefined) {
+      this.addToDecimal(value);
+    } else if (this.endOfInputs && !this.endOfInputs.operator) {
       const valueAsString = this.endOfInputs.value.toString();
       this.endOfInputs.value = +valueAsString.concat(value.toString());
     } else if (this.endOfInputs && this.endOfInputs.operator === 'Enter') {
@@ -29,9 +34,20 @@ export class StorageService {
     this.solution = 0;
   }
 
+  clearDecimal() {
+    this.decimal = undefined;
+    this.originalNumber = 0;
+  }
+
   addOperator(value: string) {
+    this.clearDecimal();
     if (!this.endOfInputs) { return; }
 
     this.endOfInputs.operator = value;
+  }
+
+  addToDecimal(value) {
+    this.decimal = this.decimal.concat(value.toString());
+    this.endOfInputs.value = +this.originalNumber.toString().concat(this.decimal);
   }
 }

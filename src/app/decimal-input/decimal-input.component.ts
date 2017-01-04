@@ -14,6 +14,20 @@ export class DecimalInputComponent implements OnInit {
   }
 
   input() {
-    return;
+    if (this.storageService.decimal !== undefined) { return; }
+
+    if (this.storageService.endOfInputs && this.storageService.endOfInputs.operator === 'Enter') {
+      this.storageService.clearInputs();
+    }
+
+    this.storageService.decimal = '.';
+
+    if (!this.storageService.endOfInputs || this.storageService.endOfInputs.value.toString().includes('.')) {
+      this.storageService.inputs.push({ value: 0 });
+    }
+
+    this.storageService.originalNumber = this.storageService.endOfInputs.value;
+
+    console.log(this.storageService.originalNumber);
   }
 }
