@@ -17,16 +17,6 @@ export class PositiveOrNegativeInputComponent implements OnInit {
     if (!this.storageService.inputs.length || this.storageService.endOfInputs.operator) {
       return;
     }
-
-    const valueAsString = this.storageService.endOfInputs.value.toString();
-
-    if (valueAsString.charAt(0) === '-') {
-      this.storageService.endOfInputs.value = +valueAsString.slice(1);
-      console.log(this.storageService.endOfInputs.value);
-    } else {
-      const negative = '-';
-      this.storageService.endOfInputs.value = +negative.concat(valueAsString);
-      console.log(this.storageService.endOfInputs.value);
-    }
+    this.storageService.endOfInputs.value *= -1;
   }
 }
