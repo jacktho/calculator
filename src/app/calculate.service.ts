@@ -49,7 +49,7 @@ export class CalculateService {
       }
     );
 
-    return finalResult.value;
+    return +finalResult.value.toFixed(13);
   }
 
   arithmetic(operator, firstValue, secondValue) {

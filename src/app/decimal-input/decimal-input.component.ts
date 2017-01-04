@@ -27,7 +27,5 @@ export class DecimalInputComponent implements OnInit {
     }
 
     this.storageService.originalNumber = this.storageService.endOfInputs.value;
-
-    console.log(this.storageService.originalNumber);
   }
 }

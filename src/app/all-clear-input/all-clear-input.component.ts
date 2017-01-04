@@ -15,6 +15,7 @@ export class AllClearInputComponent implements OnInit {
 
   input() {
     this.storageService.clearInputs();
+    this.storageService.clearDecimal();
   }
 
 }

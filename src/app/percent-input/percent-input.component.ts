@@ -23,6 +23,7 @@ export class PercentInputComponent implements OnInit {
   }
 
   input() {
+    this.storageService.clearDecimal();
     if (!this.storageService.endOfInputs) { return; }
 
     if (this.storageService.endOfInputs.operator) {

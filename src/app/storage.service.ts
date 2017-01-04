@@ -17,7 +17,7 @@ export class StorageService {
 
   addNumber(value: number) {
     if (this.decimal !== undefined) {
-      this.addToDecimal(value);
+      this.addValueToDecimal(value);
     } else if (this.endOfInputs && !this.endOfInputs.operator) {
       const valueAsString = this.endOfInputs.value.toString();
       this.endOfInputs.value = +valueAsString.concat(value.toString());
@@ -46,7 +46,7 @@ export class StorageService {
     this.endOfInputs.operator = value;
   }
 
-  addToDecimal(value) {
+  addValueToDecimal(value) {
     this.decimal = this.decimal.concat(value.toString());
     this.endOfInputs.value = +this.originalNumber.toString().concat(this.decimal);
   }
