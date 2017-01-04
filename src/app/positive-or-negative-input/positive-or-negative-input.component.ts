@@ -17,10 +17,6 @@ export class PositiveOrNegativeInputComponent implements OnInit {
     if (!this.storageService.inputs.length || this.storageService.endOfInputs.operator) {
       return;
     }
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/master
     this.storageService.endOfInputs.value *= -1;
   }
 }
