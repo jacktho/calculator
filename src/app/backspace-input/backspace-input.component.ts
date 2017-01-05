@@ -32,13 +32,16 @@ export class BackspaceInputComponent implements OnInit {
       this.storageService.inputs.pop();
       this.storageService.clearDecimal();
     }
+
+    if (!this.storageService.endOfInputs) {
+      this.storageService.clearInputs();
+    }
   }
 
   checkForExistingDecimal() {
     if (this.valueAsString.charAt(this.valueAsString.length - 2) === '.') {
-      this.storageService.endOfInputs.value = +(this.valueAsString.substring(0, this.valueAsString.length - 1));
+      this.storageService.inputs.pop();
       this.storageService.clearDecimal();
-      this.storageService.resetOriginalNumber();
     } else {
       this.storageService.endOfInputs.value = +(this.valueAsString.substring(0, this.valueAsString.length - 1));
     }
