@@ -39,6 +39,10 @@ export class StorageService {
     this.originalNumber = 0;
   }
 
+  resetOriginalNumber() {
+    this.originalNumber = this.endOfInputs.value;
+  }
+
   addOperator(value: string) {
     this.clearDecimal();
     if (!this.endOfInputs) { return; }
