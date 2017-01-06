@@ -39,16 +39,27 @@ export class BackspaceInputComponent implements OnInit {
   }
 
   checkForExistingDecimal() {
-    if (this.valueAsString.charAt(this.valueAsString.length - 2) === '.') {
+    if (this.valueAsString.charAt(this.valueAsString.length - 2) === '.'
+      && (this.valueAsString.charAt(this.valueAsString.length - 3) === undefined
+      || this.valueAsString.charAt(this.valueAsString.length - 3) === '-')) {
       this.storageService.inputs.pop();
       this.storageService.clearDecimal();
+    } else if (this.valueAsString.charAt(this.valueAsString.length - 2) === '.'
+      && !isNaN(+this.valueAsString.charAt(this.valueAsString.length - 3))) {
+      this.storageService.clearDecimal();
+      this.storageService.endOfInputs.value = +(this.valueAsString.substring(0, this.valueAsString.length - 1));
     } else {
       this.storageService.endOfInputs.value = +(this.valueAsString.substring(0, this.valueAsString.length - 1));
+    }
+
+    if (isNaN(this.storageService.endOfInputs.value)) {
+      this.storageService.inputs.pop();
     }
   }
 
   setDecimalLength() {
     if (this.storageService.decimal === undefined) { return; }
+
     if (this.storageService.decimal.length > 1) {
       this.storageService.decimal = this.storageService.decimal.substring(0, this.storageService.decimal.length - 1);
     }
