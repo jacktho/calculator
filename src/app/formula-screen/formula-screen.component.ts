@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { StorageService } from '../storage.service';
+import { FormulaScreenService } from '../formula-screen.service';
+import { Input } from '../input';
 
 @Component({
   selector: 'app-formula-screen',
@@ -7,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormulaScreenComponent implements OnInit {
 
-  constructor() { }
+  constructor(private storageService: StorageService, private formulaScreenService: FormulaScreenService) { }
 
   ngOnInit() {
+  }
+
+  public get currentEquation() {
+    return this.formulaScreenService.formulaScreenInputs.join(' ');
   }
 
 }

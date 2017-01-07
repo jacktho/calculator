@@ -20,6 +20,7 @@ import { PercentInputComponent } from './percent-input/percent-input.component';
 
 import { StorageService } from './storage.service';
 import { CalculateService } from './calculate.service';
+import { FormulaScreenService } from './formula-screen.service';
 import { DecimalInputComponent } from './decimal-input/decimal-input.component';
 
 @NgModule({
@@ -44,7 +45,7 @@ import { DecimalInputComponent } from './decimal-input/decimal-input.component';
     FormsModule,
     HttpModule
   ],
-  providers: [StorageService, CalculateService],
+  providers: [StorageService, CalculateService, FormulaScreenService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

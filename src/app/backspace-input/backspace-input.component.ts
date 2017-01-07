@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { StorageService } from '../storage.service';
+import { FormulaScreenService } from '../formula-screen.service';
 
 @Component({
   selector: 'app-backspace-input',
@@ -8,7 +9,7 @@ import { StorageService } from '../storage.service';
 })
 export class BackspaceInputComponent implements OnInit {
 
-  constructor(private storageService: StorageService) { }
+  constructor(private storageService: StorageService, private formulaScreenService: FormulaScreenService) { }
 
   ngOnInit() {
   }
@@ -35,13 +36,14 @@ export class BackspaceInputComponent implements OnInit {
 
     if (!this.storageService.endOfInputs) {
       this.storageService.clearInputs();
+      this.formulaScreenService.clearFormulaScreenInputs();
     }
   }
 
   checkForExistingDecimal() {
     if (this.valueAsString.charAt(this.valueAsString.length - 2) === '.'
       && (this.valueAsString.charAt(this.valueAsString.length - 3) === undefined
-      || this.valueAsString.charAt(this.valueAsString.length - 3) === '-')) {
+        || this.valueAsString.charAt(this.valueAsString.length - 3) === '-')) {
       this.storageService.inputs.pop();
       this.storageService.clearDecimal();
     } else if (this.valueAsString.charAt(this.valueAsString.length - 2) === '.'
