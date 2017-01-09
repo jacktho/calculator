@@ -14,19 +14,19 @@ export class ClearEntryInputComponent implements OnInit {
   ngOnInit() {
   }
 
-input() {
-  if (!this.storageService.endOfInputs) { return; }
+  input() {
+    if (!this.storageService.endOfInputs) { return; }
 
-  if (this.storageService.endOfInputs.operator && this.storageService.inputs.length > 1) {
-    delete this.storageService.endOfInputs.operator;
-    this.formulaScreenService.formulaScreenInputs.pop();
-  } else if (this.storageService.inputs.length === 1) {
-    this.storageService.clearInputs();
-    this.formulaScreenService.clearFormulaScreenInputs();
-  } else {
-    this.storageService.inputs.pop();
-    this.formulaScreenService.formulaScreenInputs.pop();
+    if (this.storageService.endOfInputs.operator && this.storageService.inputs.length > 1) {
+      delete this.storageService.endOfInputs.operator;
+      this.formulaScreenService.formulaScreenInputs.pop();
+    } else if (this.storageService.inputs.length === 1) {
+      this.storageService.clearInputs();
+      this.formulaScreenService.clearFormulaScreenInputs();
+    } else {
+      this.storageService.inputs.pop();
+      this.formulaScreenService.formulaScreenInputs.pop();
+    }
   }
-}
 
 }
