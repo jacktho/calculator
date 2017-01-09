@@ -1,1 +1,7 @@
-<p>{{currentEquation}}</p>
+<p>
+  <span *ngIf="storageService.inputs[0] && storageService.inputs[0].operator">
+    <span *ngFor="let input of storageService.inputs">
+      {{input.value}} <span> {{input.operator}} </span>
+    </span>
+  </span>
+</p>

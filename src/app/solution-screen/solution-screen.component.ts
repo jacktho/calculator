@@ -14,7 +14,7 @@ export class SolutionScreenComponent implements OnInit {
   }
 
   public get currentNumber() {
-    if (!this.storageService.inputs.length || this.storageService.endOfInputs.operator === 'Enter') {
+    if (!this.storageService.inputs.length || this.storageService.endOfInputs.operator === '=') {
       return this.storageService.solution;
     } else {
       return this.storageService.endOfInputs.value;

@@ -54,13 +54,13 @@ export class CalculateService {
 
   arithmetic(operator, firstValue, secondValue) {
     switch (operator) {
-      case 'addition':
+      case '+':
         return firstValue + secondValue;
-      case 'subtraction':
+      case '-':
         return firstValue - secondValue;
-      case 'multiplication':
+      case '*':
         return firstValue * secondValue;
-      case 'division':
+      case '/':
         return firstValue / secondValue;
       default:
         break;

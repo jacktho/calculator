@@ -22,16 +22,16 @@ export class OperatorInputComponent implements OnInit {
 
   assignCharacterCode() {
     switch (this.operatorType) {
-      case 'division':
+      case '/':
         this.characterCode = String.fromCodePoint(0x00F7);
         break;
-      case 'multiplication':
+      case '*':
         this.characterCode = String.fromCodePoint(0x00D7);
         break;
-      case 'addition':
+      case '+':
         this.characterCode = String.fromCodePoint(0x002B);
         break;
-      case 'subtraction':
+      case '-':
         this.characterCode = String.fromCodePoint(0x2212);
         break;
       default:

@@ -20,8 +20,8 @@ import { PercentInputComponent } from './percent-input/percent-input.component';
 
 import { StorageService } from './storage.service';
 import { CalculateService } from './calculate.service';
-import { FormulaScreenService } from './formula-screen.service';
 import { DecimalInputComponent } from './decimal-input/decimal-input.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -38,14 +38,15 @@ import { DecimalInputComponent } from './decimal-input/decimal-input.component';
     SquareRootInputComponent,
     SquaredInputComponent,
     PercentInputComponent,
-    DecimalInputComponent
+    DecimalInputComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule
   ],
-  providers: [StorageService, CalculateService, FormulaScreenService],
+  providers: [StorageService, CalculateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -16,7 +16,7 @@ export class DecimalInputComponent implements OnInit {
   input() {
     if (this.storageService.decimal !== undefined) { return; }
 
-    if (this.storageService.endOfInputs && this.storageService.endOfInputs.operator === 'Enter') {
+    if (this.storageService.endOfInputs && this.storageService.endOfInputs.operator === '=') {
       this.storageService.clearInputs();
     }
 

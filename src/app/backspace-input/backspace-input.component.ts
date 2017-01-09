@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { StorageService } from '../storage.service';
-import { FormulaScreenService } from '../formula-screen.service';
 
 @Component({
   selector: 'app-backspace-input',
@@ -10,7 +9,7 @@ import { FormulaScreenService } from '../formula-screen.service';
 export class BackspaceInputComponent implements OnInit {
 
 
-  constructor(private storageService: StorageService, private formulaScreenService: FormulaScreenService) { }
+  constructor(private storageService: StorageService) { }
 
   ngOnInit() {
   }
@@ -37,7 +36,6 @@ export class BackspaceInputComponent implements OnInit {
 
     if (!this.storageService.endOfInputs) {
       this.storageService.clearInputs();
-      this.formulaScreenService.clearFormulaScreenInputs();
     }
   }
 

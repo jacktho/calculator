@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { StorageService } from '../storage.service';
-import { FormulaScreenService } from '../formula-screen.service';
 
 @Component({
   selector: 'app-all-clear-input',
@@ -9,7 +8,7 @@ import { FormulaScreenService } from '../formula-screen.service';
 })
 export class AllClearInputComponent implements OnInit {
 
-  constructor(private storageService: StorageService, private formulaScreenService: FormulaScreenService) { }
+  constructor(private storageService: StorageService) { }
 
   ngOnInit() {
   }
@@ -17,7 +16,6 @@ export class AllClearInputComponent implements OnInit {
   input() {
     this.storageService.clearInputs();
     this.storageService.clearDecimal();
-    this.formulaScreenService.clearFormulaScreenInputs();
   }
 
 }

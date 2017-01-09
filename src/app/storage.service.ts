@@ -1,12 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Input } from './input';
-import { Subject } from 'rxjs/Rx';
 
 @Injectable()
 export class StorageService {
   inputs: Input[] = [];
   solution: number = 0;
-  showEquation = new Subject();
 
   public decimal: string;
   public originalNumber: number;
@@ -23,7 +21,7 @@ export class StorageService {
     } else if (this.endOfInputs && !this.endOfInputs.operator) {
       const valueAsString = this.endOfInputs.value.toString();
       this.endOfInputs.value = +valueAsString.concat(value.toString());
-    } else if (this.endOfInputs && this.endOfInputs.operator === 'Enter') {
+    } else if (this.endOfInputs && this.endOfInputs.operator === '=') {
       this.clearInputs();
       this.inputs.push({ value });
     } else {
@@ -46,7 +44,6 @@ export class StorageService {
     if (!this.endOfInputs) { return; }
 
     this.endOfInputs.operator = value;
-    this.showEquation.next();
   }
 
   addValueToDecimal(value) {
