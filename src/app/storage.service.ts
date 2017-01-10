@@ -51,4 +51,13 @@ export class StorageService {
     this.decimal = this.decimal.concat(value.toString());
     this.endOfInputs.value = +this.originalNumber.toString().concat(this.decimal);
   }
+
+  removeLastInput() {
+    if (this.inputs.length <= 1) {
+      this.clearInputs();
+    } else {
+      this.inputs.pop();
+      this.clearDecimal();
+    }
+  }
 }

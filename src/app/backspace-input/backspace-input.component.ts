@@ -14,56 +14,33 @@ export class BackspaceInputComponent implements OnInit {
   ngOnInit() {
   }
 
-  get valueAsString() {
-    return this.storageService.endOfInputs.value.toString();
+  input() {
+    if (!this.storageService.inputs.length) { return; }
+
+    this.removeLastItem();
   }
 
-  input() {
-    if (!this.storageService.endOfInputs) { return; }
-
+  removeLastItem() {
     if (this.storageService.endOfInputs.operator) {
       delete this.storageService.endOfInputs.operator;
-    } else if (this.valueAsString.length === 1 && this.storageService.inputs.length === 1) {
-      this.storageService.clearInputs();
-      this.storageService.clearDecimal();
-    } else if (this.valueAsString.length > 1) {
-      this.checkForExistingDecimal();
-      this.setDecimalLength();
     } else {
-      this.storageService.inputs.pop();
-      this.storageService.clearDecimal();
+      this.removeDigitFromValue();
     }
 
-    if (!this.storageService.endOfInputs) {
-      this.storageService.clearInputs();
-    }
+    this.cleanup();
   }
 
-  checkForExistingDecimal() {
-    const splitValue = this.valueAsString.split('.');
-    const wholeNumberDigits = splitValue[0] ? splitValue[0].replace('-', '').length : 0;
-    const decimalPlaces = splitValue[1] ? splitValue[1].length : 0;
+  removeDigitFromValue() {
+    const lastValueAsString = this.storageService.endOfInputs.value.toString();
 
-    if (decimalPlaces === 1 && wholeNumberDigits === 0) {
-      this.storageService.inputs.pop();
-      this.storageService.clearDecimal();
-    } else if (decimalPlaces === 1 && wholeNumberDigits > 0) {
-      this.storageService.clearDecimal();
-      this.storageService.endOfInputs.value = +(this.valueAsString.substring(0, this.valueAsString.length - 1));
-    } else {
-      this.storageService.endOfInputs.value = +(this.valueAsString.substring(0, this.valueAsString.length - 1));
-
-      if (isNaN(this.storageService.endOfInputs.value)) {
-        this.storageService.inputs.pop();
-      }
-    }
+    this.storageService.endOfInputs.value = +(lastValueAsString.substring(
+      0, lastValueAsString.length - 1
+    ));
   }
 
-  setDecimalLength() {
-    if (this.storageService.decimal === undefined) { return; }
-
-    if (this.storageService.decimal.length > 1) {
-      this.storageService.decimal = this.storageService.decimal.substring(0, this.storageService.decimal.length - 1);
+  cleanup() {
+    if (!this.storageService.endOfInputs.value) {
+      this.storageService.removeLastInput();
     }
   }
 }
