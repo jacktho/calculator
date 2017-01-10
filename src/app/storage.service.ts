@@ -32,6 +32,7 @@ export class StorageService {
   clearInputs() {
     this.inputs = [];
     this.solution = 0;
+    this.clearDecimal();
   }
 
   clearDecimal() {
