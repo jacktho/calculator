@@ -14,18 +14,8 @@ export class DecimalInputComponent implements OnInit {
   }
 
   input() {
-    if (this.storageService.decimal !== undefined) { return; }
+    if (this.storageService.decimalPlaceCount > 0) { return; }
 
-    if (this.storageService.endOfInputs && this.storageService.endOfInputs.operator === '=') {
-      this.storageService.clearInputs();
-    }
-
-    this.storageService.decimal = '.';
-
-    if (!this.storageService.endOfInputs || this.storageService.endOfInputs.value.toString().includes('.')) {
-      this.storageService.inputs.push({ value: 0 });
-    }
-
-    this.storageService.originalNumber = this.storageService.endOfInputs.value;
+    this.storageService.decimalPlaceCount = 1;
   }
 }

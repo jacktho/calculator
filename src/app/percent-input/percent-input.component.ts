@@ -16,14 +16,13 @@ export class PercentInputComponent implements OnInit {
   }
 
   get currentTotal() {
-    return this.calculateService.calculate(true);
+    return this.calculateService.calculate();
   }
 
   ngOnInit() {
   }
 
   input() {
-    this.storageService.clearDecimal();
     if (!this.storageService.endOfInputs) { return; }
 
     if (this.storageService.endOfInputs.operator) {
@@ -36,12 +35,12 @@ export class PercentInputComponent implements OnInit {
   }
 
   addPercentAsNewValueToInputs() {
-    const percent = (this.currentTotal / 100) * this.currentTotal;
+    const percent = +((this.currentTotal / 100) * this.currentTotal).toFixed(13);
     this.storageService.addNumber(percent);
   }
 
   changeValueToPercentageOfPreviousValue() {
-    const percent = (this.endOfInputsValue / 100) * this.currentTotal;
+    const percent = +((this.endOfInputsValue / 100) * this.currentTotal).toFixed(13);
     this.storageService.endOfInputs.value = percent;
   }
 }

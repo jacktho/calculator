@@ -14,6 +14,16 @@ export class NumberInputComponent implements OnInit {
   }
 
   input() {
-    this.storageService.addNumber(this.numberValue);
+    const numberOfInputs = this.findNumberOfInputs();
+    if (numberOfInputs < 14
+      || (this.storageService.endOfInputs && this.storageService.endOfInputs.operator)) {
+      this.storageService.addNumber(this.numberValue);
+    }
+  }
+
+  findNumberOfInputs() {
+    if (!this.storageService.endOfInputs) { return 0; }
+
+    return this.storageService.endOfInputs.value.toString().length;
   }
 }
