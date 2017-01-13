@@ -1,0 +1,5 @@
+<table>
+  <tr *ngFor="let savedInputs of savedInputsService.savedFormulas; let i = index;">
+    <td><span (click)="savedInputsService.load(i)">{{savedInputs.title}}</span></td>
+  </tr>
+</table>

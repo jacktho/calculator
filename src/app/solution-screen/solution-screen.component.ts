@@ -14,34 +14,44 @@ export class SolutionScreenComponent implements OnInit {
   }
 
   public get currentNumber() {
+    if (this.storageService.endOfInputs && isNaN(this.storageService.endOfInputs.value)) {
+      return 'Invalid input';
+    }
+
+    const decimalButtonWasJustPressed =
+      (!this.storageService.inputs.length
+        || this.storageService.endOfInputs.operator)
+      && this.storageService.decimalPlaceCount === 1;
+
+    if (decimalButtonWasJustPressed) {
+      return '0.';
+    }
+
+    const decimalPlaceWithNoValueOrValueEqualsZero = this.storageService.decimalPlaceCount > 0
+      && (!this.storageService.endOfInputs || this.storageService.endOfInputs.value === 0);
+
+    if (decimalPlaceWithNoValueOrValueEqualsZero) {
+      return this.createDotZeroString(0);
+    }
+
     const hasWholeNumberWithDecimalPlacesOfZero: boolean =
       !this.decimalPlaceHasNumberGreaterThanZero()
       && this.storageService.endOfInputs
       && this.storageService.decimalPlaceCount > 0
       && this.storageService.endOfInputs.value > 0;
 
-    const decimalButtonWasJustPressed =
-      (!this.storageService.inputs.length
-      || this.storageService.endOfInputs.operator)
-      && this.storageService.decimalPlaceCount === 1;
-
-    const decimalPlaceWithNoValueOrValueEqualsZero = this.storageService.decimalPlaceCount > 0
-      && (!this.storageService.endOfInputs || this.storageService.endOfInputs.value === 0);
+    if (hasWholeNumberWithDecimalPlacesOfZero) {
+      return this.createDotZeroString(this.storageService.endOfInputs.value);
+    }
 
     const noInputsOrOperatorIsEquals = !this.storageService.inputs.length
       || this.storageService.endOfInputs.operator === '=';
 
-    if (decimalButtonWasJustPressed) {
-      return '0.';
-    } else if (decimalPlaceWithNoValueOrValueEqualsZero) {
-      return this.createDotZeroString(0);
-    } else if (hasWholeNumberWithDecimalPlacesOfZero) {
-      return this.createDotZeroString(this.storageService.endOfInputs.value);
-    } else if (noInputsOrOperatorIsEquals) {
+    if (noInputsOrOperatorIsEquals) {
       return this.storageService.solution.toString();
-    } else {
-      return this.addCorrectNumberOfTrailingZeros();
     }
+
+    return this.addCorrectNumberOfTrailingZeros();
   }
 
   addCorrectNumberOfTrailingZeros() {
@@ -79,5 +89,4 @@ export class SolutionScreenComponent implements OnInit {
     }
     return zeroString;
   }
-
 }
