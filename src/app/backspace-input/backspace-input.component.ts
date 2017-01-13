@@ -15,6 +15,10 @@ export class BackspaceInputComponent implements OnInit {
   }
 
   input() {
+    if (this.storageService.decimalPlaceCount > 0) {
+      this.storageService.decimalPlaceCount--;
+    }
+
     if (!this.storageService.inputs.length) { return; }
 
     this.removeLastItem();

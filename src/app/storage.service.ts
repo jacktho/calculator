@@ -53,16 +53,14 @@ export class StorageService {
   }
 
   addDecimalToValue(startingNumber) {
+    if (this.decimalPlaceCount > 13) { return startingNumber; }
+
     const decimalNumber: number = this.convertToDecimal(this.numberToAdd, this.decimalPlaceCount);
 
     this.decimalPlaceCount++;
 
     const addingResult: number = startingNumber + decimalNumber;
     const fixedValue = +addingResult.toFixed(10);
-
-    // const fixedDecimal: number = +parseInt(resultSplit[1], 10).toFixed(10);
-    // const finalString: string = resultSplit[0] + '.' + fixedDecimal.toString();
-    // const fixedValue: number = Math.round(+finalString);
 
     return fixedValue;
   }
@@ -88,7 +86,6 @@ export class StorageService {
   clearInputs() {
     this.inputs = [];
     this.solution = 0;
-    // this.decimalPlaceCount = 0;
   }
 
   addOperator(value: string) {
@@ -106,4 +103,4 @@ export class StorageService {
       this.inputs.pop();
     }
   }
-}
+ }
