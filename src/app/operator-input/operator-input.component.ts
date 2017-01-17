@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, HostListener } from '@angular/core';
 import { StorageService } from '../storage.service';
 
 @Component({
@@ -11,6 +11,11 @@ export class OperatorInputComponent implements OnInit {
   characterCode: string;
 
   constructor(private storageService: StorageService) { }
+
+  @HostListener('document: keydown', ['$event'])
+  keyDown(event: KeyboardEvent) {
+    alert(event.key);
+  }
 
   ngOnInit() {
     this.assignCharacterCode();

@@ -10,6 +10,7 @@ export class NumberInputComponent implements OnInit {
   @Input() numberValue: any;
 
   constructor(private storageService: StorageService) { }
+
   @HostListener('document: keydown', ['$event'])
   keyDown(event: KeyboardEvent) {
     // tslint:disable-next-line:triple-equals
