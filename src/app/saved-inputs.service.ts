@@ -46,4 +46,8 @@ export class SavedInputsService {
     this.storageService.inputs = this.savedFormulas[index].inputs;
     this.storageService.solution = this.calculateService.calculate();
   }
+
+  delete(index: number) {
+    this.savedFormulas.splice(index, 1);
+  }
 }

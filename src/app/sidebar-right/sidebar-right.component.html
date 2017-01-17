@@ -1,5 +1,6 @@
-<table>
-  <tr *ngFor="let savedInputs of savedInputsService.savedFormulas; let i = index;">
-    <td><span (click)="savedInputsService.load(i)">{{savedInputs.title}}</span></td>
-  </tr>
-</table>
+<ul>
+  <li *ngFor="let savedInputs of savedInputsService.savedFormulas; let i = index;">
+    <span (click)="savedInputsService.load(i)">{{savedInputs.title}}</span>
+    <button (click)="savedInputsService.delete(i)">x</button>
+  </li>
+</ul>
