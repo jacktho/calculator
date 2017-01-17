@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { StorageService } from '../storage.service';
 import { CalculateService } from '../calculate.service';
 
@@ -11,6 +11,11 @@ export class EnterInputComponent implements OnInit {
 
   constructor(private storageService: StorageService,
     private calculateService: CalculateService) { }
+
+ @HostListener('document: keydown.enter', [])
+  keyDown() {
+      this.input();
+  }
 
   ngOnInit() {
   }

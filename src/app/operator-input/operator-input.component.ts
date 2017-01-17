@@ -12,9 +12,11 @@ export class OperatorInputComponent implements OnInit {
 
   constructor(private storageService: StorageService) { }
 
-  @HostListener('document: keydown', ['$event'])
+  @HostListener('document: keypress', ['$event'])
   keyDown(event: KeyboardEvent) {
-    alert(event.key);
+    if (this.operatorType === event.key) {
+      this.input();
+    }
   }
 
   ngOnInit() {

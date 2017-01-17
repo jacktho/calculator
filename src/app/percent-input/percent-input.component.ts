@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, HostListener } from '@angular/core';
 import { StorageService } from '../storage.service';
 import { CalculateService } from '../calculate.service';
 
@@ -17,6 +17,13 @@ export class PercentInputComponent implements OnInit {
 
   get currentTotal() {
     return this.calculateService.calculate();
+  }
+
+  @HostListener('document: keypress', ['$event'])
+  keyDown(event: KeyboardEvent) {
+    if (event.key === '%') {
+      this.input();
+    }
   }
 
   ngOnInit() {

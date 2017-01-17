@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { StorageService } from '../storage.service';
 
 @Component({
@@ -8,8 +8,14 @@ import { StorageService } from '../storage.service';
 })
 export class BackspaceInputComponent implements OnInit {
 
-
   constructor(private storageService: StorageService) { }
+
+  @HostListener('document: keypress', ['$event'])
+  keyDown(event: KeyboardEvent) {
+    if (event.key === 'Delete') {
+      this.input();
+    }
+  }
 
   ngOnInit() {
   }
