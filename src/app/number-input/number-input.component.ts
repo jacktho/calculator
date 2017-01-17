@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, HostListener } from '@angular/core';
 import { StorageService } from '../storage.service';
 
 @Component({
@@ -8,12 +8,20 @@ import { StorageService } from '../storage.service';
 })
 export class NumberInputComponent implements OnInit {
   @Input() numberValue: any;
+
   constructor(private storageService: StorageService) { }
+  @HostListener('document: keydown', ['$event'])
+  keyDown(event: KeyboardEvent) {
+    // tslint:disable-next-line:triple-equals
+    if (event.key == this.numberValue) {
+      this.input(event.key);
+    }
+  }
 
   ngOnInit() {
   }
 
-  input() {
+  input(value) {
     const numberOfInputs = this.findNumberOfInputs();
     if (numberOfInputs < 14
       || (this.storageService.endOfInputs && this.storageService.endOfInputs.operator)) {
