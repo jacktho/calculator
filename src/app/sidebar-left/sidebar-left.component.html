@@ -5,6 +5,6 @@
   </tr>
   <tr *ngIf="storageService.endOfInputs && storageService.endOfInputs.operator === '='">
     <td><button (click)="triggerSave()">Save</button></td>
-    <td style="border-top: 1px solid black">{{storageService.solution}}</td>
+    <td style="border-top: 1px solid white">{{storageService.solution}}</td>
   </tr>
 </table>
