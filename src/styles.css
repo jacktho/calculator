@@ -1,5 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
-body {}
+* {
+  font-family: 'DK Crayon Crumble';
+  font-size: xx-large;
+}
+
+html {
+  height: 100%;
+  background-image: url('/assets/images/background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 button {
   flex-basis: 100%;
