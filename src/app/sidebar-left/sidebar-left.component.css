@@ -1,3 +1,16 @@
 td {
   color: white;
 }
+
+.label {
+  width: 30%;
+}
+
+input {
+  width: 100%;
+}
+
+.equation {
+  text-align: center;
+  padding-left: 10px;
+}

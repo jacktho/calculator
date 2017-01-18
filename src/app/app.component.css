@@ -8,17 +8,19 @@
 app-sidebar-left {
   margin-left: 20%;
   width: 20%;
-  border: 1px solid red;
+  opacity: .8;
+  padding-right: 20px;
 }
 
 .main-calculator {
   width: 20%;
 }
 
-.placeholder {
+app-sidebar-right {
   margin-right: 20%;
   width: 20%;
-  border: 1px solid red;
+  opacity: .8;
+  padding-left: 20px;
 }
 
 .button-wrap {

@@ -1,10 +1,10 @@
 <table>
   <tr *ngFor="let input of storageService.inputs">
-    <td><input [(ngModel)]="input.label" placeholder="Label"></td>
-    <td>{{input.value}} <span *ngIf="input.operator !== '='">{{input.operator}}</span></td>
+    <td class="label"><input [(ngModel)]="input.label" placeholder="Label"></td>
+    <td class="equation">{{input.value}} <span *ngIf="input.operator !== '='">{{input.operator}}</span></td>
   </tr>
   <tr *ngIf="storageService.endOfInputs && storageService.endOfInputs.operator === '='">
     <td><button (click)="triggerSave()">Save</button></td>
-    <td style="border-top: 1px solid white">{{storageService.solution}}</td>
+    <td class="equation" style="border-top: 3px solid white">{{storageService.solution}}</td>
   </tr>
 </table>
