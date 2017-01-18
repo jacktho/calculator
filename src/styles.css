@@ -1,6 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister');
+
 * {
-  font-family: 'DK Crayon Crumble';
+  font-family: 'Love Ya Like A Sister', cursive;
   font-size: xx-large;
   font-weight: bold;
 }
@@ -14,5 +16,18 @@ html {
 
 button {
   flex-basis: 100%;
-  height: 40px;
+  /*height: 40px;*/
+  background: none;
+  color: white;
+  opacity: .8;
+  border: 3px solid white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+input {
+  background: none;
+  border: 3px solid white;
+  color: white;
+  opacity: .8;
 }
