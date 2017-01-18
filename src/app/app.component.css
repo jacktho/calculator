@@ -1,3 +1,7 @@
+* {
+  font-family: 'Love Ya Like A Sister', cursive;
+  font-size: 2.6vw;
+}
 
 .app-container {
   display: flex;
@@ -6,21 +10,20 @@
 }
 
 app-sidebar-left {
-  margin-left: 20%;
-  width: 20%;
-  opacity: .8;
-  padding-right: 20px;
+  margin-left: auto;
+  width: 31vw;
+  padding-right: 1vw;
+  font-size: 2.2vw;
 }
 
 .main-calculator {
-  width: 20%;
+  width: 32vw;
 }
 
 app-sidebar-right {
-  margin-right: 20%;
-  width: 20%;
-  opacity: .8;
-  padding-left: 20px;
+  margin-right: auto;
+  width: 31vw;
+  padding-left: 1vw;
 }
 
 .button-wrap {
