@@ -39,7 +39,7 @@ export class OperatorInputComponent implements OnInit {
         this.characterCode = String.fromCodePoint(0x002B);
         break;
       case '-':
-        this.characterCode = String.fromCodePoint(0x2212);
+        this.characterCode = String.fromCodePoint(0x002D);
         break;
       default:
         break;
