@@ -2,4 +2,9 @@ p {
   text-align: right;
   min-height: 20px;
   color: white;
+  line-height: 1.2vw;
+}
+
+span {
+  font-size: 1.5vw;
 }

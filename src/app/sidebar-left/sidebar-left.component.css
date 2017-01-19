@@ -5,7 +5,7 @@ td {
 .label {
   border: none;
   width: 10vw;
-  font-size: 2.7vw;
+  font-size: 2.1vw;
 }
 
 .save {
@@ -21,6 +21,11 @@ input {
 .equation {
   text-align: left;
   padding-left: 2vw;
+  font-size: 2.1vw;
+}
+
+.operator {
+  font-size: 2.1vw;
 }
 
 .last {

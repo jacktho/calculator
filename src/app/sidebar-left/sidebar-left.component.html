@@ -1,7 +1,7 @@
 <table>
   <tr *ngFor="let input of storageService.inputs">
     <td><input class="label" [(ngModel)]="input.label" placeholder="Label"></td>
-    <td class="equation">{{input.value}} <span *ngIf="input.operator !== '='">{{input.operator}}</span></td>
+    <td class="equation">{{input.value}} <span class="operator" *ngIf="input.operator !== '='">{{input.operator}}</span></td>
   </tr>
   <tr *ngIf="storageService.endOfInputs && storageService.endOfInputs.operator === '='">
     <td></td>
