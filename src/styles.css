@@ -18,7 +18,8 @@ button {
   flex-basis: 100%;
   background: none;
   color: white;
-  border: 3px solid white;
+  border-image: url(/assets/images/button-border.png) 14;
+  border-width: 5px;
   padding-top: 10px;
   padding-bottom: 10px;
 }
