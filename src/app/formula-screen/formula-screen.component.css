@@ -3,6 +3,8 @@ p {
   min-height: 20px;
   color: white;
   line-height: 1.2vw;
+  padding-left: 2%;
+  padding-right: 2%
 }
 
 span {
