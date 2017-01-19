@@ -12,16 +12,14 @@ html {
   background-image: url('/assets/images/background.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  /*font-weight: bold;*/
 }
 
 button {
   flex-basis: 100%;
-  /*height: 40px;*/
   background: none;
   color: white;
-  /*opacity: .95;*/
-  border: 3px solid white;
+  border-image: url(/assets/images/button-border.png) 14;
+  border-width: 5px;
   padding-top: 10px;
   padding-bottom: 10px;
 }
@@ -30,5 +28,4 @@ input {
   background: none;
   border: 3px solid white;
   color: white;
-  /*opacity: .8;*/
 }
