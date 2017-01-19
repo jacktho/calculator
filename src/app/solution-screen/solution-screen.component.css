@@ -1,6 +1,8 @@
 p {
   text-align: right;
   color: white;
-  margin: 0;
+  margin-bottom: 0;
   font-size: 4vw;
+  padding-left: 2%;
+  padding-right: 2%;
 }
