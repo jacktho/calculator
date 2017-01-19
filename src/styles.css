@@ -24,6 +24,35 @@ button {
   padding-bottom: 10px;
 }
 
+app-number-input:nth-of-type(2) button,
+app-number-input:last-of-type button,
+.square-root-input,
+.positive-or-negative-input,
+app-operator-input:nth-of-type(2) button {
+  border-image: url(/assets/images/button-border-2.png) 12;
+}
+
+.percent-input,
+.backspace-input,
+app-number-input:nth-of-type(9) button,
+app-number-input:nth-of-type(4) button,
+app-operator-input:nth-of-type(3) button {
+  border-image: url(/assets/images/button-border-3.png) 12;
+}
+
+.clear-entry-input,
+app-operator-input:first-of-type button,
+app-number-input:nth-of-type(5) button,
+.decimal-input {
+  border-image: url(/assets/images/button-border-4.png) 14;
+}
+
+app-number-input:nth-of-type(6) button,
+app-number-input:nth-of-type(7) button,
+.all-clear-input {
+  border-image: url(/assets/images/button-border-5.png) 12;
+}
+
 input {
   background: none;
   border: 3px solid white;
