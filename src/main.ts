@@ -10,3 +10,9 @@ if (environment.production) {
 }
 
 platformBrowserDynamic().bootstrapModule(AppModule);
+
+window.onkeydown = function (event) {
+  if (event.keyCode === 32 && event.target === document.body) {
+    event.preventDefault();
+  }
+};

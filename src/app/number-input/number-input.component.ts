@@ -14,7 +14,8 @@ export class NumberInputComponent implements OnInit {
   @HostListener('document: keydown', ['$event'])
   keyDown(event: KeyboardEvent) {
     // tslint:disable-next-line:triple-equals
-    if (event.key == this.numberValue) {
+    console.log(event.key);
+    if (event.key == this.numberValue && event.keyCode !== 32) {
       this.input(event.key);
     }
   }
