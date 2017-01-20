@@ -2,6 +2,25 @@ li:hover {
   cursor: pointer;
 }
 
+span:hover {
+  font-weight: 600;
+}
+
+button {
+  position: relative;
+  top: -.5vw;
+  font-size: 1vw;
+  margin: 0;
+  padding: 0;
+}
+
+button:hover {
+  color: indianred;
+  border-image: url(/assets/images/CE-border.png) 12;
+}
+
 li {
+  display: block;
+  list-style: none;
   color: white;
 }
