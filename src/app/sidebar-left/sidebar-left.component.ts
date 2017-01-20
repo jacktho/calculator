@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { StorageService } from '../storage.service';
 import { SavedInputsService } from '../saved-inputs.service';
 
@@ -8,8 +8,6 @@ import { SavedInputsService } from '../saved-inputs.service';
   styleUrls: ['./sidebar-left.component.css']
 })
 export class SidebarLeftComponent implements OnInit {
-  @ViewChild('inputTitle') inputTitle: ElementRef;
-
   constructor(
     private storageService: StorageService,
     private savedInputsService: SavedInputsService
@@ -19,7 +17,7 @@ export class SidebarLeftComponent implements OnInit {
   }
 
   triggerSave() {
-    let title = this.inputTitle.nativeElement.value;
+    let title = this.storageService.title;
 
     if (title !== '') {
       this.savedInputsService.save(title);

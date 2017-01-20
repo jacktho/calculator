@@ -1,18 +1,22 @@
-
 <table>
   <tr *ngIf="storageService.endOfInputs && storageService.endOfInputs.operator === '='">
-    <td colspan="2" style="text-align: center"><input #inputTitle class="title" type="text"
-    [(ngModel)]="storageService.title" placeholder="Title"></td>
+    <td colspan="2">
+      <input class="title" type="text" [(ngModel)]="storageService.title" placeholder="Title">
+    </td>
   </tr>
-  <tr *ngFor="let input of storageService.inputs">
-    <td><input class="label" [(ngModel)]="input.label" placeholder="Label"></td>
-    <td class="equation">{{input.value}} <span class="operator" *ngIf="input.operator !== '='">{{input.operator}}</span></td>
-  </tr>
-  <tr *ngIf="storageService.endOfInputs && storageService.endOfInputs.operator === '='">
-    <td></td>
-    <td class="equation last">{{storageService.solution}}</td>
-  </tr>
-  <tr *ngIf="storageService.endOfInputs && storageService.endOfInputs.operator === '='">
-    <td colspan="2" style="text-align: center"><button class="save" (click)="triggerSave()">M+</button></td>
-  </tr>
+<tr *ngFor="let input of storageService.inputs">
+  <td><input class="label" [(ngModel)]="input.label" placeholder="Label"></td>
+  <td class="equation">{{input.value}}
+    <span class="operator" *ngIf="input.operator !== '='">{{input.operator}}</span>
+  </td>
+</tr>
+<tr *ngIf="storageService.endOfInputs && storageService.endOfInputs.operator === '='">
+  <td></td>
+  <td class="equation last">{{storageService.solution}}</td>
+</tr>
+<tr *ngIf="storageService.endOfInputs && storageService.endOfInputs.operator === '='">
+  <td colspan="2">
+<button class="save" (click)="triggerSave()">M+</button>
+</td>
+</tr>
 </table>

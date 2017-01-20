@@ -2,6 +2,10 @@ td {
   color: white;
 }
 
+tr:first-child td, tr:last-child td {
+  text-align: center;
+}
+
 .title {
   width: 20vw;
   border: none;
