@@ -20,10 +20,9 @@ app-sidebar-left {
 
 app-sidebar-right {
   justify-content: center;
-  margin-top: 2.9vw;
+  margin-top: 3.7vw;
   margin-right: auto;
   width: 31vw;
-  padding-left: 1vw;
 }
 
 .button-wrap {
