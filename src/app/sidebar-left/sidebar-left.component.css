@@ -30,6 +30,10 @@ tr td:nth-of-type(1), tr:last-child td {
   padding: .9vw 1.5vw;
 }
 
+.save:hover {
+  cursor: pointer;
+}
+
 input {
   width: 100%;
 }
