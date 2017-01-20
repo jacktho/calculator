@@ -7,6 +7,7 @@ export class StorageService {
   solution: number = 0;
   decimalPlaceCount: number = 0;
   numberToAdd: number = 0;
+  title: string = '';
 
   constructor() { }
 
