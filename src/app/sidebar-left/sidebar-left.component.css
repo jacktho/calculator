@@ -2,7 +2,7 @@ td {
   color: white;
 }
 
-tr:first-child td, tr:last-child td {
+tr td:nth-of-type(1), tr:last-child td {
   text-align: center;
 }
 
