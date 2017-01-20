@@ -15,4 +15,5 @@ window.onkeydown = function (event) {
   if (event.keyCode === 32 && event.target === document.body) {
     event.preventDefault();
   }
+  if (event.keyCode === 13) { event.preventDefault(); }
 };
