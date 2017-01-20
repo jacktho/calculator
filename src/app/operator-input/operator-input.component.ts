@@ -8,7 +8,6 @@ import { StorageService } from '../storage.service';
 })
 export class OperatorInputComponent implements OnInit {
   @Input() operatorType: string;
-  characterCode: string;
 
   constructor(private storageService: StorageService) { }
 
@@ -20,30 +19,9 @@ export class OperatorInputComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.assignCharacterCode();
   }
 
   input() {
     this.storageService.addOperator(this.operatorType);
   }
-
-  assignCharacterCode() {
-    switch (this.operatorType) {
-      case '/':
-        this.characterCode = String.fromCodePoint(0x00F7);
-        break;
-      case '*':
-        this.characterCode = String.fromCodePoint(0x00D7);
-        break;
-      case '+':
-        this.characterCode = String.fromCodePoint(0x002B);
-        break;
-      case '-':
-        this.characterCode = String.fromCodePoint(0x002D);
-        break;
-      default:
-        break;
-    }
-  }
-
 }
