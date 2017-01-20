@@ -1,0 +1,4 @@
+button {
+  color: indianred;
+  border-image: url(/assets/images/AC-border.png) 13;
+}
