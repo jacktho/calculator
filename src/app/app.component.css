@@ -1,14 +1,16 @@
 
 .app-container {
+  margin-top: 4vw;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 
 app-sidebar-left {
+  justify-content: center;
+  margin-top: 5.5vw;
   margin-left: auto;
   width: 31vw;
-  padding-right: 1vw;
   font-size: 2.2vw;
 }
 
@@ -17,6 +19,8 @@ app-sidebar-left {
 }
 
 app-sidebar-right {
+  justify-content: center;
+  margin-top: 2.9vw;
   margin-right: auto;
   width: 31vw;
   padding-left: 1vw;
