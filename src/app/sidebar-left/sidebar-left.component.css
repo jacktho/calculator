@@ -40,5 +40,8 @@ input {
 }
 
 .last {
-  border-top: 3px solid white;
+  padding-top: 8px;
+  background-image: url(/assets/images/solution-line.png);
+  background-repeat: no-repeat;
+  background-size: 100% 10px;
 }
