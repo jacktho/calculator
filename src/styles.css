@@ -24,6 +24,10 @@ button {
   padding-bottom: 10px;
 }
 
+button:focus, input:focus {
+  outline: none;
+}
+
 app-number-input:nth-of-type(2) button,
 app-number-input:last-of-type button,
 .square-root-input,
