@@ -12,9 +12,11 @@ export class EnterInputComponent implements OnInit {
   constructor(private storageService: StorageService,
     private calculateService: CalculateService) { }
 
- @HostListener('document: keydown.enter', [])
-  keyDown() {
+  @HostListener('document: keydown.enter', ['$event'])
+  keyDown(event: KeyboardEvent) {
+    if (event.srcElement.tagName !== 'INPUT') {
       this.input();
+    }
   }
 
   ngOnInit() {

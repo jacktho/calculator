@@ -12,7 +12,7 @@ export class BackspaceInputComponent implements OnInit {
 
   @HostListener('document: keypress', ['$event'])
   keyDown(event: KeyboardEvent) {
-    if (event.key === 'Delete') {
+    if (event.key === 'Delete' && event.srcElement.tagName !== 'INPUT') {
       this.input();
     }
   }

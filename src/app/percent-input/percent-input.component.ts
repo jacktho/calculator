@@ -21,7 +21,7 @@ export class PercentInputComponent implements OnInit {
 
   @HostListener('document: keypress', ['$event'])
   keyDown(event: KeyboardEvent) {
-    if (event.key === '%') {
+    if (event.key === '%' && event.srcElement.tagName !== 'INPUT') {
       this.input();
     }
   }
