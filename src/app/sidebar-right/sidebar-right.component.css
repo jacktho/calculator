@@ -1,13 +1,11 @@
 ul {
   text-align: center;
-}
-
-li:hover {
-  cursor: pointer;
+  padding-left: 0;
 }
 
 span:hover {
   font-weight: 600;
+  cursor: pointer;
 }
 
 button {
