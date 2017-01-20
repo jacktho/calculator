@@ -45,6 +45,7 @@ export class SavedInputsService {
   load(index: number) {
     this.storageService.inputs = this.savedFormulas[index].inputs;
     this.storageService.solution = this.calculateService.calculate();
+    this.storageService.title = this.savedFormulas[index].title;
   }
 
   delete(index: number) {
