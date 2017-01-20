@@ -32,6 +32,8 @@ export class PercentInputComponent implements OnInit {
   input() {
     if (!this.storageService.endOfInputs) { return; }
 
+    this.storageService.decimalPlaceCount = 0;
+
     if (this.storageService.endOfInputs.operator) {
       this.addPercentAsNewValueToInputs();
     } else if (this.storageService.inputs.length > 1) {
