@@ -1,3 +1,5 @@
+// removed from app as it was redudant per left bar
+
 import { Component, OnInit } from '@angular/core';
 import { StorageService } from '../storage.service';
 import { Input } from '../input';
