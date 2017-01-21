@@ -1,5 +1,6 @@
 <!doctype html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <title>Calculator</title>
@@ -7,8 +8,36 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="/assets/outdatedbrowser/outdatedbrowser.min.css">
 </head>
+
 <body>
   <app-root>Loading...</app-root>
+  <div id="outdated"></div>
+  <script src="/assets/outdatedbrowser/outdatedBrowser.min.js"></script>
+  <script>//event listener: DOM ready
+    function addLoadEvent(func) {
+      var oldonload = window.onload;
+      if (typeof window.onload != 'function') {
+        window.onload = func;
+      } else {
+        window.onload = function () {
+          if (oldonload) {
+            oldonload();
+          }
+          func();
+        }
+      }
+    }
+    //call plugin function after DOM ready
+    addLoadEvent(function () {
+      outdatedBrowser({
+        bgColor: '#f25648',
+        color: '#ffffff',
+        lowerThan: 'borderImage',
+        languagePath: '/assets/outdatedbrowser/lang/en.html'
+      })
+    });</script>
 </body>
+
 </html>
