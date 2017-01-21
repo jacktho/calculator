@@ -2,3 +2,7 @@ button {
   color: indianred;
   border-image: url(/assets/images/CE-border.png) 12;
 }
+
+button:hover {
+  color: #9a4545;
+}

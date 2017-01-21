@@ -2,3 +2,7 @@ button {
   color: seagreen;
   border-image: url(/assets/images/enter-border.png) 16;
 }
+
+button:hover {
+  color: #22613e;
+}
