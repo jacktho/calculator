@@ -1,1 +1,1 @@
-<button class="operator-input" (click)="input()">{{operatorType}}</button>
+<button [ngClass]="{'pressed': isPressed}"class="operator-input" (click)="input()">{{operatorType}}</button>

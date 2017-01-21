@@ -8,6 +8,7 @@ import { CalculateService } from '../calculate.service';
   styleUrls: ['./enter-input.component.css']
 })
 export class EnterInputComponent implements OnInit {
+  isPressed: boolean;
 
   constructor(private storageService: StorageService,
     private calculateService: CalculateService) { }
@@ -16,7 +17,13 @@ export class EnterInputComponent implements OnInit {
   keyDown(event: KeyboardEvent) {
     if (event.srcElement.tagName !== 'INPUT') {
       this.input();
+      this.isPressed = true;
     }
+  }
+
+  @HostListener('document: keyup.enter', [])
+  keyUp() {
+    this.isPressed = false;
   }
 
   ngOnInit() {

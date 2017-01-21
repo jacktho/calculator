@@ -9,6 +9,8 @@ import { StorageService } from '../storage.service';
 export class NumberInputComponent implements OnInit {
   @Input() numberValue: any;
 
+  isPressed: boolean;
+
   constructor(private storageService: StorageService) { }
 
   @HostListener('document: keydown', ['$event'])
@@ -16,7 +18,13 @@ export class NumberInputComponent implements OnInit {
     // tslint:disable-next-line:triple-equals
     if (event.key == this.numberValue && event.srcElement.tagName !== 'INPUT') {
       this.input(event.key);
+      this.isPressed = true;
     }
+  }
+
+  @HostListener('document: keyup', [])
+  keyUp() {
+    this.isPressed = false;
   }
 
   ngOnInit() {

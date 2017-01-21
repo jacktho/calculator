@@ -7,6 +7,7 @@ import { StorageService } from '../storage.service';
   styleUrls: ['./decimal-input.component.css']
 })
 export class DecimalInputComponent implements OnInit {
+  isPressed: boolean;
 
   constructor(private storageService: StorageService) { }
 
@@ -14,7 +15,13 @@ export class DecimalInputComponent implements OnInit {
   keyDown(event: KeyboardEvent) {
     if (event.key === '.' && event.srcElement.tagName !== 'INPUT') {
       this.input();
+      this.isPressed = true;
     }
+  }
+
+  @HostListener('document: keyup', [])
+  keyUp() {
+    this.isPressed = false;
   }
 
   ngOnInit() {

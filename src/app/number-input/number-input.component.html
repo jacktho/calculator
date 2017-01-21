@@ -1,1 +1,1 @@
-<button class="number-input" (click)="input()">{{numberValue}}</button>
+<button [ngClass]="{'pressed': isPressed}" class="number-input" (click)="input()">{{numberValue}}</button>

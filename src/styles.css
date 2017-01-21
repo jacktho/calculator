@@ -30,6 +30,17 @@ button:focus, input:focus {
   outline: none;
 }
 
+button:hover {
+  color: lightgray;
+}
+
+button:active, .pressed {
+  /*background-image: url(/assets/images/button-click-background.png);
+  background-repeat: no-repeat;
+  background-position: center;*/
+  box-shadow: inset 0 0 55px -20px black;
+}
+
 app-number-input:nth-of-type(2) button,
 app-number-input:last-of-type button,
 .positive-or-negative-input,
