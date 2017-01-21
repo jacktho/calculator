@@ -1,6 +1,8 @@
+<div *ngIf="savedInputsService.savedFormulas.length">
 <ul>
   <li *ngFor="let savedInputs of savedInputsService.savedFormulas; let i = index;">
     <span (click)="savedInputsService.load(i)">{{savedInputs.title}}</span>
     <button (click)="savedInputsService.delete(i)">x</button>
   </li>
 </ul>
+</div>

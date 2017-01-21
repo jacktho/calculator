@@ -1,6 +1,16 @@
+.number-pad-note {
+  height: 3vw;
+  background-image: url(/assets/images/number-pad-tip.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.number-pad-note {
+  text-align: center;
+}
 
 .app-container {
-  margin-top: 4vw;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -20,7 +30,6 @@ app-sidebar-left {
 
 app-sidebar-right {
   justify-content: center;
-  margin-top: 3.7vw;
   margin-right: auto;
   width: 31vw;
 }

@@ -1,4 +1,14 @@
+div {
+  text-align: center;
+  background-image: url(/assets/images/click-to-load.png);
+  background-repeat: no-repeat;
+  background-size: auto 4.25vw;
+  background-position: center top;
+  padding-top: 5.5vw;
+}
+
 ul {
+  margin-top: 0;
   text-align: center;
   padding-left: 0;
 }

@@ -30,6 +30,14 @@ tr td:nth-of-type(1), tr:last-child td {
   padding: .9vw 1.5vw;
 }
 
+.save-td {
+  padding-bottom: 4vw;
+  background-image: url(/assets/images/click-to-save.png);
+  background-repeat: no-repeat;
+  background-size: auto 3.25vw;
+  background-position: center bottom;
+}
+
 .save:hover {
   cursor: pointer;
 }
