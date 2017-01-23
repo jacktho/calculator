@@ -48,7 +48,7 @@ app-sidebar-right {
   flex-basis: 21%;
   display: flex;
   align-items: stretch;
-  padding: 2%;
+  padding: .5vw;
 }
 
 .stretch {
