@@ -63,7 +63,7 @@ input {
   background-size: 100% .5vw;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 640px) {
   table {
     margin: 0;
     width: 90vw;
