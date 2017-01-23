@@ -8,7 +8,6 @@
 
 html {
   height: 100%;
-  min-width: 360px;
   background: url('/assets/images/background.jpg');
   background-repeat: no-repeat;
   background-position: center;
@@ -21,9 +20,9 @@ button {
   background: none;
   color: white;
   border-image: url(/assets/images/button-border.png) 14;
-  border-width: 5px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  border-width: .5vw;
+  padding-top: 1vw;
+  padding-bottom: 1vw;
 }
 
 button:focus, input:focus {
@@ -75,12 +74,16 @@ input {
   color: white;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 597px) {
   body {
     margin: 0;
   }
 
   * {
     font-size: 9vw;
+  }
+
+  button {
+    border-width: 1.5vw;
   }
 }

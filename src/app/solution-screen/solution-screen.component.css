@@ -8,7 +8,7 @@ p {
   padding-right: 2%;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 597px) {
   p {
     font-size: 14vw;
   }

@@ -37,7 +37,7 @@ li {
   color: white;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 597px) {
   div {
     background-size: auto 10.25vw;
     padding-top: 10.5vw;
