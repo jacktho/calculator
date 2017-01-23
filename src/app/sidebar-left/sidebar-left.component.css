@@ -66,11 +66,12 @@ input {
 @media (max-width: 768px) {
   table {
     margin: 0;
-    width: 100vw;
+    width: 90vw;
   }
 
   .title {
     font-size: 9vw;
+    width: 50vw;
   }
 
   .label {
@@ -84,5 +85,15 @@ input {
 
   .save {
     font-size: 8vw;
+  }
+
+  .last {
+    background-size: 50% .5vw;
+  }
+
+  .save-td {
+    background-size: auto 10.25vw;
+    background-position: center bottom;
+    padding-bottom: 12vw;
   }
 }

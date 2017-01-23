@@ -56,26 +56,30 @@ app-sidebar-right {
 }
 
 @media (max-width: 768px) {
+  .number-pad-note {
+    height: 5.25vw;
+  }
 
   .app-container {
     flex-direction: column;
   }
 
   .main-calculator {
+    margin: 0 auto 0 auto;
     justify-content: center;
-    width: 100vw;
+    width: 90vw;
     order: 1;
   }
 
   app-sidebar-left {
-    width: 100vw;
-    margin: 0;
+    margin: 10vw auto 0 auto;
+    width: 90vw;
     order: 2;
   }
 
   app-sidebar-right {
-    width: 100vw;
-    margin: 0;
+    margin: 5vw auto 0 auto;
+    width: 90vw;
     order: 3;
   }
 }
