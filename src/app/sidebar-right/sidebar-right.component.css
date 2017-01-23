@@ -36,3 +36,9 @@ li {
   list-style: none;
   color: white;
 }
+
+@media (max-width: 768px) {
+  button {
+    font-size: 5vw;
+  }
+}

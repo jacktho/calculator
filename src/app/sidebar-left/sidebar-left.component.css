@@ -62,3 +62,27 @@ input {
   background-repeat: no-repeat;
   background-size: 100% .5vw;
 }
+
+@media (max-width: 768px) {
+  table {
+    margin: 0;
+    width: 100vw;
+  }
+
+  .title {
+    font-size: 9vw;
+  }
+
+  .label {
+    width: 15vw;
+    font-size: 6vw;
+  }
+
+  .equation, .operator {
+    font-size: 6vw;
+  }
+
+  .save {
+    font-size: 8vw;
+  }
+}
