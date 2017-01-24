@@ -1,9 +1,10 @@
 .number-pad-note {
-  height: 3vw;
+  height: 1.45vw;
   background-image: url(/assets/images/number-pad-tip.png);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+  margin-bottom: 3vw;
 }
 
 .number-pad-note {
@@ -79,7 +80,9 @@ app-sidebar-right {
     order: 3;
   }
 
-  /*.button-wrap > * {
-    padding: 1.8vw;
-  }*/
+  .number-pad-note {
+    margin-top: 1vw;
+    height: 3.45vw;
+    background-image: url(/assets/images/scroll-to-save.png);
+  }
 }
