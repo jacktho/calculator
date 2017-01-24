@@ -15,7 +15,6 @@ export class OperatorInputComponent implements OnInit {
 
   @HostListener('document: keypress', ['$event'])
   keyDown(event: KeyboardEvent) {
-    console.log(event);
     if (this.operatorType === event.key || this.operatorType === event.char
       && (event.target as HTMLElement).tagName !== 'INPUT') {
       this.input();
