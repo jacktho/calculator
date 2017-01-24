@@ -11,6 +11,7 @@ p {
 @media (max-width: 597px) {
   p {
     font-size: 14vw;
-    overflow-wrap: break-word;
+
+    overflow: hidden;
   }
 }
