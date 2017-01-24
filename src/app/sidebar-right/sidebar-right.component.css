@@ -23,7 +23,8 @@ button {
   top: -.5vw;
   font-size: 1vw;
   margin: 0;
-  padding: 0;
+  padding: 0 .25vw;
+  border-width: .3vw;
 }
 
 button:hover {

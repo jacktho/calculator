@@ -4,8 +4,8 @@ p {
   text-align: right;
   color: seagreen;
   font-size: 4vw;
-  padding-left: 2%;
-  padding-right: 2%;
+  padding-left: .5vw;
+  padding-right:.5vw;
 }
 
 @media (max-width: 597px) {

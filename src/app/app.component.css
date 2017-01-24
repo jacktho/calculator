@@ -48,7 +48,7 @@ app-sidebar-right {
   flex-basis: 21%;
   display: flex;
   align-items: stretch;
-  padding: .5vw;
+  padding: .64vw;
 }
 
 .stretch {
@@ -81,5 +81,9 @@ app-sidebar-right {
     margin: 5vw auto 0 auto;
     width: 90vw;
     order: 3;
+  }
+
+  .button-wrap > * {
+    padding: 1.8vw;
   }
 }
