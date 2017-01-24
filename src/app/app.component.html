@@ -1,33 +1,45 @@
 <div class="number-pad-note"></div>
 <div class='app-container'>
   <app-sidebar-left></app-sidebar-left>
-    <div class="main-calculator">
-      <app-solution-screen></app-solution-screen>
-      <div class="button-wrap">
+  <div class="main-calculator">
+    <app-solution-screen></app-solution-screen>
+    <div class="button-wrap">
+      <div>
         <app-percent-input></app-percent-input>
         <app-square-root-input></app-square-root-input>
         <app-squared-input></app-squared-input>
         <app-operator-input [operatorType]="'/'"></app-operator-input>
+      </div>
+      <div>
         <app-clear-entry-input></app-clear-entry-input>
         <app-all-clear-input></app-all-clear-input>
         <app-backspace-input></app-backspace-input>
         <app-operator-input [operatorType]="'*'"></app-operator-input>
+      </div>
+      <div>
         <app-number-input [numberValue]="7"></app-number-input>
         <app-number-input [numberValue]="8"></app-number-input>
         <app-number-input [numberValue]="9"></app-number-input>
         <app-operator-input [operatorType]="'-'"></app-operator-input>
+      </div>
+      <div>
         <app-number-input [numberValue]="4"></app-number-input>
         <app-number-input [numberValue]="5"></app-number-input>
         <app-number-input [numberValue]="6"></app-number-input>
         <app-operator-input [operatorType]="'+'"></app-operator-input>
+      </div>
+      <div>
         <app-number-input [numberValue]="1"></app-number-input>
         <app-number-input [numberValue]="2"></app-number-input>
         <app-number-input [numberValue]="3"></app-number-input>
         <app-positive-or-negative-input></app-positive-or-negative-input>
+      </div>
+      <div>
         <app-number-input [numberValue]="0"></app-number-input>
         <app-decimal-input></app-decimal-input>
         <app-enter-input class="stretch"></app-enter-input>
       </div>
     </div>
-    <app-sidebar-right></app-sidebar-right>
+  </div>
+  <app-sidebar-right></app-sidebar-right>
 </div>

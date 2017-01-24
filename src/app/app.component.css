@@ -24,31 +24,28 @@ app-sidebar-left {
   font-size: 2.2vw;
 }
 
-.main-calculator {
-  width: 32vw;
-}
-
 app-sidebar-right {
   justify-content: center;
   margin-right: auto;
   width: 31vw;
 }
 
-.button-wrap {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  flex-wrap: wrap;
-  flex-flow: row wrap;
-  align-content: flex-end;
+.main-calculator {
+  width: 32vw;
 }
 
-.button-wrap > * {
-  flex-basis: 21%;
+.button-wrap {
+  flex-direction: column;
   display: flex;
-  align-items: stretch;
-  padding: .64vw;
+}
+
+.button-wrap div {
+  display: flex;
+}
+
+.button-wrap div > * {
+  display: flex;
+  width: 25%;
 }
 
 .stretch {
@@ -62,13 +59,12 @@ app-sidebar-right {
 
   .app-container {
     flex-direction: column;
+    justify-content: space-around;
   }
 
   .main-calculator {
     margin: 0 auto 0 auto;
-    justify-content: center;
     width: 90vw;
-    order: 1;
   }
 
   app-sidebar-left {
@@ -83,7 +79,7 @@ app-sidebar-right {
     order: 3;
   }
 
-  .button-wrap > * {
+  /*.button-wrap > * {
     padding: 1.8vw;
-  }
+  }*/
 }
