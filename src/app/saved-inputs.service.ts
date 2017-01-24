@@ -10,13 +10,28 @@ export class SavedInputsService {
   constructor(
     private storageService: StorageService,
     private calculateService: CalculateService
-  ) { }
+  ) {
+    this.loadFromBrowserStorage();
+   }
+
+  loadFromBrowserStorage() {
+    const parseResult = JSON.parse(localStorage.getItem('savedFormulas'));
+    if (parseResult) {
+      this.savedFormulas = parseResult;
+    }
+  }
 
   save(title: string = this.createFormulaPreview()) {
     if (!this.storageService.inputs.length) { return; }
 
-
     this.savedFormulas.push({ inputs: this.storageService.inputs, title });
+
+    this.saveToBrowserStorage();
+  }
+
+  saveToBrowserStorage() {
+    const savedFormulasString: string = JSON.stringify(this.savedFormulas);
+    localStorage.setItem('savedFormulas', savedFormulasString);
   }
 
   createFormulaPreview(): string {
@@ -50,5 +65,6 @@ export class SavedInputsService {
 
   delete(index: number) {
     this.savedFormulas.splice(index, 1);
+    this.saveToBrowserStorage();
   }
 }
