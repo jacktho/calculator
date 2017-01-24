@@ -45,6 +45,10 @@ li {
   }
 
   button {
-    font-size: 2.8vw;
+    position: relative;
+    top: -1.4vw;
+    font-size: 4.5vw;
+    padding: 0 1vw;
+    border-width: 1.5vw;
   }
 }
