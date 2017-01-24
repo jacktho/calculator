@@ -13,7 +13,8 @@ export class DecimalInputComponent implements OnInit {
 
   @HostListener('document: keypress', ['$event'])
   keyDown(event: KeyboardEvent) {
-    if (event.key === '.' && event.srcElement.tagName !== 'INPUT') {
+    if (event.key === '.' || event.char === '.'
+      && (event.target as HTMLElement).tagName !== 'INPUT') {
       this.input();
       this.isPressed = true;
     }

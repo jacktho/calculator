@@ -15,7 +15,7 @@ export class EnterInputComponent implements OnInit {
 
   @HostListener('document: keydown.enter', ['$event'])
   keyDown(event: KeyboardEvent) {
-    if (event.srcElement.tagName !== 'INPUT') {
+    if ((event.target as HTMLElement).tagName !== 'INPUT') {
       this.input();
       this.isPressed = true;
     }
