@@ -17,6 +17,7 @@ html {
 }
 
 button {
+  flex-basis: 100%;
   background: none;
   color: white;
   border-image: url(/assets/images/button-border.png) 14;
