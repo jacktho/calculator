@@ -18,7 +18,6 @@ export class CalculateService {
   multiplyAndDivide() {
     let valuesWereUsed: boolean = false;
     this.storageService.inputs.forEach((input, index, inputs) => {
-      // Example: 1*2*3 .. first iteration.. 1*2... so skip 2 on second iteration
       if (valuesWereUsed) {
         valuesWereUsed = false;
         return;
@@ -36,7 +35,7 @@ export class CalculateService {
         this.tempInputs.push({ value: arithmeticResult, operator: secondInput.operator });
 
         valuesWereUsed = true;
-      } else { // push for additionAndSubtraction
+      } else {
         this.tempInputs.push(input);
       }
     });

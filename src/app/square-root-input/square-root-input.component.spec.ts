@@ -3,21 +3,21 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { SquareRootInputComponent } from './square-root-input.component';
+import { SquareRootComponent } from './square-root.component';
 
-describe('SquareRootInputComponent', () => {
-  let component: SquareRootInputComponent;
-  let fixture: ComponentFixture<SquareRootInputComponent>;
+describe('SquareRootComponent', () => {
+  let component: SquareRootComponent;
+  let fixture: ComponentFixture<SquareRootComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SquareRootInputComponent ]
+      declarations: [ SquareRootComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SquareRootInputComponent);
+    fixture = TestBed.createComponent(SquareRootComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

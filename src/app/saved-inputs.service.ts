@@ -15,7 +15,7 @@ export class SavedInputsService {
    }
 
   loadFromBrowserStorage() {
-    const parseResult: SavedInputs[] = JSON.parse(localStorage.getItem('savedFormulas'));
+    const parseResult = JSON.parse(localStorage.getItem('savedFormulas'));
     if (parseResult) {
       this.savedFormulas = parseResult;
     }
