@@ -53,7 +53,7 @@ app-sidebar-right {
   flex-grow: 1;
 }
 
-@media (max-width: 597px) {
+@media (max-width: 567px) {
   .number-pad-note {
     height: 5.25vw;
   }
@@ -67,6 +67,8 @@ app-sidebar-right {
     margin: 0 auto 0 auto;
     width: 90vw;
   }
+
+
 
   app-sidebar-left {
     margin: 10vw auto 0 auto;
