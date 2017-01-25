@@ -16,7 +16,7 @@ export class NumberInputComponent implements OnInit {
   @HostListener('document: keydown', ['$event'])
   keyDown(event: KeyboardEvent) {
     // tslint:disable-next-line:triple-equals
-    if (event.key == this.numberValue && event.srcElement.tagName !== 'INPUT') {
+    if (event.key == this.numberValue && (event.target as HTMLElement).tagName !== 'INPUT') {
       this.input(event.key);
       this.isPressed = true;
     }

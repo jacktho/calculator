@@ -10,9 +10,9 @@ export class BackspaceInputComponent implements OnInit {
 
   constructor(private storageService: StorageService) { }
 
-  @HostListener('document: keypress', ['$event'])
+  @HostListener('document: keydown', ['$event'])
   keyDown(event: KeyboardEvent) {
-    if (event.key === 'Delete' && event.srcElement.tagName !== 'INPUT') {
+    if (event.key === 'Backspace' && (event.target as HTMLElement).tagName !== 'INPUT') {
       this.input();
     }
   }

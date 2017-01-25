@@ -16,4 +16,7 @@ window.onkeydown = function (event) {
     event.preventDefault();
   }
   if (event.keyCode === 13) { event.preventDefault(); }
+  if (event.key === 'Backspace' && (event.target as HTMLElement).tagName !== 'INPUT') {
+    event.preventDefault();
+  }
 };
