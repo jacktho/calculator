@@ -17,10 +17,10 @@ export class StorageService {
 
   addNumber(value: number) {
     this.numberToAdd = value;
-    this.checkForEquals();
+    this.clearInputsIfEqualsHasBeenPressed();
 
     const valueToAdd: number = this.findValueToAdd();
-    const newInputIsNeeded = !this.endOfInputs || this.endOfInputs.operator;
+    const newInputIsNeeded: boolean = !this.endOfInputs || this.endOfInputs.operator ? true : false;
 
     if (newInputIsNeeded) {
       this.inputs.push({ value: valueToAdd });
@@ -29,7 +29,7 @@ export class StorageService {
     }
   }
 
-  checkForEquals() {
+  clearInputsIfEqualsHasBeenPressed() {
     if (!this.inputs.length) { return; }
 
     if (this.endOfInputs.operator === '=') {
