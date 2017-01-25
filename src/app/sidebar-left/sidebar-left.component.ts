@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { StorageService } from '../storage.service';
-import { SavedInputsService } from '../saved-inputs.services';
+import { SavedInputsService } from '../saved-inputs.service';
 
 @Component({
   selector: 'app-sidebar-left',
