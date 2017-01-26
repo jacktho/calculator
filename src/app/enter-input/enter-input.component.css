@@ -1,6 +1,6 @@
 button {
   color: seagreen;
-  border-image: url(/assets/images/enter-border.png) 16;
+  border-image: url(./assets/images/enter-border.png) 16;
 }
 
 button:hover {

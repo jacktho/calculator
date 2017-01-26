@@ -32,7 +32,7 @@ tr td:nth-of-type(1), tr:last-child td {
 
 .save-td {
   padding-bottom: 4vw;
-  background-image: url(/assets/images/click-to-save.png);
+  background-image: url(./assets/images/click-to-save.png);
   background-repeat: no-repeat;
   background-size: auto 3.25vw;
   background-position: center bottom;
@@ -58,7 +58,7 @@ input {
 
 .last {
   padding-top: 1vw;
-  background-image: url(/assets/images/solution-line.png);
+  background-image: url(./assets/images/solution-line.png);
   background-repeat: no-repeat;
   background-size: 100% .5vw;
 }

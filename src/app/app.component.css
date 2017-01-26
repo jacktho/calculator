@@ -1,6 +1,6 @@
 .number-pad-note {
   height: 1.45vw;
-  background-image: url(/assets/images/number-pad-tip.png);
+  background-image: url(./assets/images/number-pad-tip.png);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -85,6 +85,6 @@ app-sidebar-right {
   .number-pad-note {
     margin-top: 1vw;
     height: 3.45vw;
-    background-image: url(/assets/images/scroll-to-save.png);
+    background-image: url(./assets/images/scroll-to-save.png);
   }
 }
