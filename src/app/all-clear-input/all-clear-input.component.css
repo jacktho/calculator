@@ -1,6 +1,6 @@
 button {
   color: indianred;
-  border-image: url(/assets/images/AC-border.png) 13;
+  border-image: url(./assets/images/AC-border.png) 13;
 }
 
 button:hover {
